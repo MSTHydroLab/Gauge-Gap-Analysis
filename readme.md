@@ -27,12 +27,12 @@ gauge-gap/
 
 ### 1. `gauge_gap_analysis.ipynb` — Gauge Gap Analysis
 
-Identifies ungauged HUC-10 watersheds by propagating stream gage coverage through the hydrologic network.
+Identifies ungauged HUC-10 watersheds by propagating stream gauge coverage through the hydrologic network.
 
 **Pipeline:**
-1. Load spatial layers (flowpaths, divides, gages, HUC-12, HUC-10, state boundary) from `data/Gap_input.gpkg`
-2. Assign gages to catchment divides via point-in-polygon spatial join
-3. Build a directed flow network and propagate gage coverage via BFS traversal
+1. Load spatial layers (flowpaths, divides, gauges, HUC-12, HUC-10, state boundary) from `data/Gap_input.gpkg`
+2. Assign gauges to catchment divides via point-in-polygon spatial join
+3. Build a directed flow network and propagate gauge coverage via BFS traversal
 4. Propagate coverage: flowpaths → divides → HUC-12 → HUC-10
 5. Apply state boundary filters to finalize ungauged HUC-10 candidates
 6. Write all result layers to `Gap_output_final_v2.gpkg`
@@ -43,7 +43,7 @@ Identifies ungauged HUC-10 watersheds by propagating stream gage coverage throug
 |---|---|
 | `flowpaths` | Hydrofabric flowpath (vectorized stream network)|
 | `divides` | Hydrofabric divide polygons |
-| `gage` | Stream gage point locations |
+| `gage` | Stream gauge point locations |
 | `huc12` | HUC-12 watershed polygons |
 | `huc10` | HUC-10 watershed polygons |
 | `state` | State boundary polygon |
@@ -156,9 +156,9 @@ Each notebook has a configuration block at the top (Section 2) which can be adju
 
 ## Coverage Logic
 
-The coverage algorithm in `gauge_gap_analysis.ipynb` marks a flowpath as `well_gaged` based on its drainage area relative to the nearest upstream gage:
+The coverage algorithm in `gauge_gap_analysis.ipynb` marks a flowpath as `well_gaged` based on its drainage area relative to the nearest upstream gauge:
 
-| Gage drainage area | Upstream bound | Downstream bound |
+| Gauge drainage area | Upstream bound | Downstream bound |
 |---|---|---|
 | ≥ threshold (2000 km²) | `area − threshold / 2` | `area + threshold / 2` |
 | < threshold | `0.5 × area` | `1.5 × area` |
