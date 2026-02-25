@@ -176,6 +176,18 @@ The flowpath and catchment divide data used in `gauge_gap_analysis.ipynb` are de
 - **GitHub:** [https://github.com/NOAA-OWP/hydrofabric](https://github.com/NOAA-OWP/hydrofabric)
 - **Data access (Lynker Spatial S3):** https://www.lynker-spatial.com/data
 
+
 ### Watershed Boundary Dataset (WBD)
 
 > U.S. Geological Survey. *Watershed Boundary Dataset (WBD)*. https://www.usgs.gov/national-hydrography/watershed-boundary-dataset
+
+## Prioritization Input Datasets
+
+The following datasets are used as indicators in `gauge_prioritization.ipynb`:
+
+| Dataset | Organization | Spatial Unit | Data Period | Source |
+|---|---|---|---|---|
+| Disaster declarations | FEMA | Polygon (county) | 1960–2024 | [OpenFEMA Disaster Declarations Summaries v2](https://www.fema.gov/openfema-data-page/disaster-declarations-summaries-v2) |
+| Flood insurance claims | FEMA | Point (lat/lon) | 1976–2024 | [OpenFEMA NFIP Redacted Claims v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-claims-v2) |
+| Flood-induced road closures | MoDOT | Line (road section) | 2006–2023 | [MoDOT Customer Help](https://modot.mycusthelp.com/) |
+| Population | U.S. Census Bureau | Polygon (city/community) | 2024 | [Census City and Town Population Estimates](https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html) |
