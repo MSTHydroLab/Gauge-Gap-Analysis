@@ -12,7 +12,7 @@ gauge-gap/
 ├── gauge_prioritization.ipynb      # Notebook 2 — score and rank ungauged HUC-10s
 ├── data/
 │   ├── Gap_input.gpkg              
-│   └── prioritization.gpkg         # Input for prioritization (contain four socio-economic datasets and identified ungauged HUC-10 from 'gauge_gap_analysis.ipynb'.
+│   └── prioritization.gpkg         
 ├── prioritization_out/             # Auto-created on run
 │   ├── prioritization_outputs.gpkg
 │   ├── prioritization_outputs_all.csv
@@ -54,11 +54,10 @@ Identifies ungauged HUC-10 watersheds by propagating stream gage coverage throug
 |---|---|
 | `flowpaths_gagegap` | Flowpaths with `gage_status` and `well_gaged` flags |
 | `divides_gagegap` | Divides with `has_gage` and `covered_divide` flags |
-| `huc12_gagegap` | HUC-12s with `covered_huc` flag and area fractions |
+| `huc12_gagegap` | HUC-12s with `covered_huc` flag |
 | `huc10_gagegap` | HUC-10s with `covered_huc` flag |
-| `huc10_enriched` | HUC-10s with state area fraction and outlet-in-state flag |
 | `ungauged_huc10_final` | Final ungauged HUC-10 candidates |
-| `gages_assigned` | Gages with their assigned divide ID |
+
 
 ---
 
@@ -89,7 +88,6 @@ Scores and ranks ungauged HUC-10 watersheds using four flood risk and infrastruc
 | File | Description |
 |---|---|
 | `prioritization_outputs.gpkg` | GeoPackage with `huc10_prioritized_all` and `huc10_prioritized_ungauged` layers |
-| `prioritization_outputs_all.csv` | Scores and ranks for all HUC-10s |
 | `prioritization_outputs_ungauged.csv` | Scores and ranks for ungauged candidates only |
 | `priority_map.png` | Prioritized map for study area |
 
@@ -124,7 +122,7 @@ conda install -c conda-forge numpy pandas geopandas shapely networkx matplotlib
 
 ## Configuration
 
-Each notebook has a configuration block at the top (Section 2) where you can adjust:
+Each notebook has a configuration block at the top (Section 2) which can be adjusted:
 
 **`gauge_gap_analysis.ipynb`**
 
@@ -133,7 +131,7 @@ Each notebook has a configuration block at the top (Section 2) where you can adj
 | `INPUT_GPKG` | Path to input GeoPackage |
 | `LAYER_NAMES` | Layer name mappings |
 | `COLUMN_NAMES` | Column name mappings |
-| `COVERAGE_THRESHOLD_KM2` | Drainage area window for BFS coverage (default: 2000 km²) |
+| `COVERAGE_THRESHOLD_KM2` | Drainage area threshold (default: 2000 km²) |
 
 **`gauge_prioritization.ipynb`**
 
@@ -143,7 +141,6 @@ Each notebook has a configuration block at the top (Section 2) where you can adj
 | `LAYER_NAMES` | Layer name mappings |
 | `COLUMN_NAMES` | Column name mappings for indicator fields |
 | `METRIC_CRS` | CRS for area/length computations (default: `EPSG:5070`) |
-| `bin_size` | Rank bin size for choropleth map (default: `20`) |
 
 ---
 
