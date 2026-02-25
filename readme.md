@@ -41,7 +41,7 @@ Identifies ungauged HUC-10 watersheds by propagating stream gage coverage throug
 
 | Layer | Description |
 |---|---|
-| `flowpaths` | Hydrofabric flowpath geometries with drainage area and hydrosequence |
+| `flowpaths` | Hydrofabric flowpath (vectorized stream network)|
 | `divides` | Hydrofabric divide polygons |
 | `gage` | Stream gage point locations |
 | `huc12` | HUC-12 watershed polygons |
@@ -165,3 +165,17 @@ The coverage algorithm in `gauge_gap_analysis.ipynb` marks a flowpath as `well_g
 |---|---|---|
 | ≥ threshold (2000 km²) | `area − threshold / 2` | `area + threshold / 2` |
 | < threshold | `0.5 × area` | `1.5 × area` |
+
+## References
+
+### Hydrofabric Data
+
+The flowpath and catchment divide data used in `gauge_gap_analysis.ipynb` are derived from the NOAA NextGen National Hydrologic Geospatial Fabric (hydrofabric), developed in collaboration between NOAA, the USGS, and Lynker.
+
+> Johnson, J.M., 2022. National hydrologic geospatial fabric (hydrofabric) for the next generation (NextGen) hydrologic modeling framework. HydroShare [https://www.hydroshare.org/resource/129787b468aa4d55ace7b124ed27dbde/](https://www.hydroshare.org/resource/129787b468aa4d55ace7b124ed27dbde/)
+- **GitHub:** [https://github.com/NOAA-OWP/hydrofabric](https://github.com/NOAA-OWP/hydrofabric)
+- **Data access (Lynker Spatial S3):** https://www.lynker-spatial.com/data
+
+### Watershed Boundary Dataset (WBD)
+
+> U.S. Geological Survey. *Watershed Boundary Dataset (WBD)*. https://www.usgs.gov/national-hydrography/watershed-boundary-dataset
