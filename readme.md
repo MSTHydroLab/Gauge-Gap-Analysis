@@ -11,8 +11,8 @@ gauge-gap/
 ├── gauge_gap_analysis.ipynb        # Notebook 1 — identify ungauged HUC-10s
 ├── gauge_prioritization.ipynb      # Notebook 2 — score and rank ungauged HUC-10s
 ├── data/
-│   ├── Gap_input.gpkg              
-│   └── prioritization.gpkg         
+│   └── meramec.gpkg          
+│       
 ├── prioritization_out/             # Auto-created on run
 │   ├── prioritization_outputs.gpkg
 │   ├── prioritization_outputs_all.csv
