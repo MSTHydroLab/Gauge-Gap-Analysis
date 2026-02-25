@@ -171,7 +171,7 @@ The flowpath and catchment divide data used in `gauge_gap_analysis.ipynb` are de
 
 > Johnson, J.M., 2022. National hydrologic geospatial fabric (hydrofabric) for the next generation (NextGen) hydrologic modeling framework. HydroShare [https://www.hydroshare.org/resource/129787b468aa4d55ace7b124ed27dbde/](https://www.hydroshare.org/resource/129787b468aa4d55ace7b124ed27dbde/)
 - **GitHub:** [https://github.com/NOAA-OWP/hydrofabric](https://github.com/NOAA-OWP/hydrofabric)
-- **Data access (Lynker Spatial S3):** https://www.lynker-spatial.com/data
+- **Data access (Lynker Spatial):** https://www.lynker-spatial.com/data
 
 
 ### Watershed Boundary Dataset (WBD)
